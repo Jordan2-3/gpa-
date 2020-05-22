@@ -1,0 +1,78 @@
+public class Noblesj_Student
+
+{  //Atributes
+   private String name; 
+   private String major;
+   private String classification;
+   private double gpa;
+   
+    // Contructer
+   public Noblesj_Student (String aName, String aMajor, String aClass)
+   {
+      name = aName;
+      major = aMajor;
+      classification = aClass;
+      
+   }
+  
+ 
+   public String getName()  // Mutator method 
+   {
+      return name; // Getting the name value
+
+   }
+   
+    public String getMajor()  // Mutator method
+   {
+      return major; // Getting the major value
+
+   }
+   
+    public String checkClassification ()   // Mutator method
+   {
+      return classification; // Getting the classification value
+
+   }
+   
+   public double getGPA()   // Mutator method 
+
+   {
+      return gpa; // Getting the gpa value
+
+   }
+
+   public void setName (String newName) //Accessor method
+   {
+      name = newName;
+   } 
+
+   public void switchMajor (String newMajor) //Accessor method
+   {
+      major = newMajor;
+   }
+   
+   public void updateClassification ( String newClass)//Accessor method
+   {
+      classification = newClass;
+   }
+   
+   public void changeGPA (double newGPA)  //Accessor method
+   {
+      gpa = newGPA;
+   } 
+   
+   //  GPA calculation is based on the grade points and credit hours for each course
+   public void calculateGPA (double grade1, double grade2,
+                             double grade3, double grade4,
+                             double grade5, double grade6) 
+   {
+    gpa = ( grade1 * 3  + grade2 * 3 + grade3 * 3  + grade4 * 3 + grade5 + grade6)/ 14; // Equation to calculate gpa
+   }
+   
+   public String toString() //This object (which is already a string) is itself returned
+   {
+      return " \t name: " + name + " \n \t major: " + major + " \n \t classification: " + classification + " \n \t gpa: " + gpa;
+   }
+   
+ }
+   
