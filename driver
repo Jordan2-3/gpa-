@@ -1,0 +1,55 @@
+mport java.util.Scanner; // Import statement to use scanner class
+public class Noblesj_P2
+{
+   public static void main (String[] args)
+   {
+ 
+   Scanner keyboard = new Scanner(System.in); // Allows user to input from the keyboard
+   
+   System.out.print ( "Enter your friend’s name:"); // Ask user to input name 
+   String name = keyboard.nextLine(); //Stores user input in the variable name
+   
+   System.out.print ( "Enter your friend’s major:"); //Ask user to input major
+   String major =keyboard.nextLine(); //Stores user input in the major
+   
+   System.out.print ( "Enter your friend’s classification:"); 
+   String classification =keyboard.nextLine();//Ask user to input classification 
+      
+   System.out.print ( "Enter your friend’s gpa:"); 
+   double gpa =keyboard.nextDouble();//Ask user to input gpa    
+      
+   
+   Noblesj_Student firstStudent_JAN = new Noblesj_Student(name,major,classification); // Creating a first student object 
+   System.out.println ( "first student infomation: \n \t name: " + firstStudent_JAN.getName() + 
+       "\n \t major: " + firstStudent_JAN.getMajor() + "\n \t Classification: " + firstStudent_JAN.checkClassification() +
+         "\n \t GPA: " +  firstStudent_JAN.getGPA() ); // Using the mutators to return the values 
+  
+   Noblesj_Student secondStudent_JAN = new Noblesj_Student("Jordan","CE", "Sophomore");
+   
+   System.out.print ( " Enter grades for Student 2 (A -> 4.0, A- -> 3.7): \n \t ENG 101 (3 cr.): " );
+      double class1 = keyboard.nextDouble();
+      System.out.print("\t MAT 117 (3 cr.): ");
+      double class2 = keyboard.nextDouble();
+      System.out.print("\t CSC 191 (4 cr.): ");
+      double class3 = keyboard.nextDouble();
+      System.out.print("\t CSC 151 (1xzs cr.): ");
+      double class4 = keyboard.nextDouble();
+      System.out.print("\t HEA 200 (2 cr.): ");
+      double class5 = keyboard.nextDouble();
+      System.out.print("\t UNI 101 (1 cr.): ");
+      double class6 = keyboard.nextDouble();
+      
+      secondStudent_JAN.calculateGPA(class1, class2, class3, class4, class5, class6); // This calcualtes gpa of the grades    
+      System.out.println( " Student 2 Updated Information: \n \t Name: " +
+                            secondStudent_JAN.getName() + "\n" +
+                           "\t Major: " + secondStudent_JAN.getMajor() + "\n" +
+                           "\t Classification: " + secondStudent_JAN.checkClassification() + "\n" + "\t GPA: " + secondStudent_JAN.getGPA() + "\n"); 
+
+      System.out.print(" Enter " + secondStudent_JAN.getName() + "'s new major: "); // Asks user to input another major
+      keyboard.nextLine(); // Clears buffer
+      secondStudent_JAN.switchMajor(keyboard.nextLine()); // switches major to user input
+      System.out.println("\n Student 2 Updated Information:\n" +
+                             secondStudent_JAN.toString() + "\n"); // prints updated state of student 2
+      
+   }
+}
